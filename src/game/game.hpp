@@ -1,0 +1,16 @@
+#pragma once
+#include "game_dispatcher.hpp"
+#include "big_map.hpp"
+
+class Game
+{
+public:
+  Game(GameDispatcher gameDispatcher, BigMap bigMap);
+  void run();
+  void stop();
+
+private:
+  bool _isRunning;
+  GameDispatcher _gameDispatcher;
+  BigMap _big_map;
+};
