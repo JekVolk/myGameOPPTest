@@ -3,6 +3,8 @@
 Award::Award(const Vector2 &position, const std::string &imagePath, int radius, float scale, int value)
     : AutoControl(position, imagePath, radius, scale), _value(value) {}
 
+Award::~Award() {}
+
 bool Award::activate(Cossack &cossack)
 {
   if (_isEntersZone(cossack))
@@ -15,6 +17,7 @@ bool Award::activate(Cossack &cossack)
 
 bool Award::_isEntersZone(Cossack &cossack)
 {
-  const int cosPos = cossack.getPosition();
-  // TODO:
+  // const int cosPos = cossack.getPosition();
+  //  TODO:
+  return false;
 }

@@ -1,9 +1,9 @@
 #pragma once
-#include "award_dispatcher.hpp"
-#include "enemy_dispatcher.hpp"
-#include "sight.hpp"
-#include "cossack.hpp"
-#include "alert.hpp"
+#include "dispatcher/award/award_dispatcher.hpp"
+#include "dispatcher/enemy/enemy_dispatcher.hpp"
+#include "game_object/user_control/sight/sight.hpp"
+#include "game_object/user_control/cossack/cossack.hpp"
+#include "view/alert/alert.hpp"
 
 class GameDispatcher
 {

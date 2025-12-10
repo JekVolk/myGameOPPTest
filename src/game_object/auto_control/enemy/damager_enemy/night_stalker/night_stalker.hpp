@@ -1,10 +1,11 @@
 #pragma once
-#include "damager_enemy.hpp"
+#include "game_object/auto_control/enemy/damager_enemy/damager_enemy.hpp"
 
-class NightStalker : DamagerEnemy
+class NightStalker : public DamagerEnemy
 {
 public:
-  void move(Cossack cossack) { _moveAll(cossack); };
+  using DamagerEnemy::DamagerEnemy;
+  void move(Cossack &cossack) override { _moveAll(cossack); };
 
 private:
   static const EnemyType _type = NightStalkerType;

@@ -1,7 +1,9 @@
 #include "game_sprite.hpp"
 #include <algorithm>
 
-GameSprite::GameSprite(const Vector2 &position, const std::string &imagePath, int radius, float scale) : _radius(radius), _position(position)
+std::vector<GameSprite *> GameSprite::_sprites;
+
+GameSprite::GameSprite(const Vector2 &position, const std::string &imagePath, int radius, float scale) : _position(position), _radius(radius)
 {
   Image image = LoadImage(imagePath.c_str());
   int originalWidth = image.width;

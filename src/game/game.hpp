@@ -1,6 +1,6 @@
 #pragma once
-#include "game_dispatcher.hpp"
-#include "big_map.hpp"
+#include "dispatcher/game/game_dispatcher.hpp"
+#include "view/big_map/big_map.hpp"
 
 class Game
 {

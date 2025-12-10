@@ -1,16 +1,16 @@
 #pragma once
-#include "enemy.hpp"
-#include "damager_enemy.hpp"
+#include "game_object/auto_control/enemy/enemy.hpp"
+#include "game_object/auto_control/enemy/damager_enemy/damager_enemy.hpp"
 #include <vector>
 #include <memory>
 
-class Soulmender : Enemy
+class Soulmender : public Enemy
 {
 public:
   Soulmender(const Vector2 &position, const std::string &imagePath, int radius, float scale,
-             int hp, int maxHp, int speed, int xp, int restoreHP);
-  void heal(std::vector<std::unique_ptr<DamagerEnemy>> enemys);
-  void move(Cossack cossack);
+             int maxHp, int speed, int xp, int restoreHP);
+  void heal(std::vector<std::unique_ptr<DamagerEnemy>> &enemies);
+  void move(Cossack &cossack) override;
 
 private:
   static const EnemyType _type = SoulmenderType;

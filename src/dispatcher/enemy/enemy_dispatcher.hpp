@@ -1,8 +1,7 @@
 #pragma once
-#include "enemy.hpp"
-#include "award.hpp"
-#include "enemy_dispatcher.hpp"
-#include "soulmender.hpp"
+#include "game_object/auto_control/enemy/enemy.hpp"
+#include "game_object/auto_control/award/award.hpp"
+#include "game_object/auto_control/enemy/soulmender/soulmender.hpp"
 #include <unordered_map>
 #include <vector>
 #include <memory>
@@ -20,9 +19,10 @@ struct CreateEnemyInfo
 class EnemyDispatcher
 {
 public:
-  std::vector<std::unique_ptr<Enemy>> getEnemys();
+  std::vector<std::unique_ptr<DamagerEnemy>> &getDamagers() { return _damagers; };
+  std::vector<std::unique_ptr<Soulmender>> &getSoulmenders() { return _soulmenders; };
   void createEnemys(int level);
-  void deleteEnemys(std::vector<int> ids);
+  void deleteEnemys(const std::vector<int> &ids);
   bool actionEnemy(Cossack &cossack);
 
 private:
@@ -33,7 +33,7 @@ private:
   std::vector<std::unique_ptr<Soulmender>> _soulmenders;
 
   bool _attackEnemy(Cossack &cossack);
-  void _healEnemy(Cossack &cossack);
+  void _healEnemy();
   void _moveEnemy(Cossack &cossack);
   void _deleteDamagerEnemy(size_t i);
   void _deleteSoulmender(size_t i);

@@ -4,13 +4,24 @@ Sight::Sight(const Vector2 &position, const std::string &imagePath, int radius, 
 {
 }
 
-std::vector<int> Sight::shot(std::vector<std::unique_ptr<Enemy>> enemys)
+std::vector<int> Sight::shot(std::vector<std::unique_ptr<DamagerEnemy>> &damagers, std::vector<std::unique_ptr<Soulmender>> &soulmenders)
 {
   std::vector<int> hits;
 
-  for (auto &enemy : enemys)
+  for (auto &enemy : damagers)
   {
-    if (_isAttackZone(enemy))
+    if (_isAttackZone(*enemy))
+    {
+      if (enemy->takeDamage(_damage))
+      {
+        hits.push_back(enemy->getId());
+      }
+    }
+  }
+
+  for (auto &enemy : soulmenders)
+  {
+    if (_isAttackZone(*enemy))
     {
       if (enemy->takeDamage(_damage))
       {

@@ -45,7 +45,11 @@ void GameDispatcher::keyLoop()
 
   if (IsKeyDown(KEY_SPACE))
   {
-    _enemyDispatcher.deleteEnemys(_sight.shot(_enemyDispatcher.getEnemys()));
+    std::vector<int> killedIds = _sight.shot(
+        _enemyDispatcher.getDamagers(),
+        _enemyDispatcher.getSoulmenders());
+
+    _enemyDispatcher.deleteEnemys(killedIds);
   }
 }
 

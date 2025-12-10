@@ -1,6 +1,6 @@
 #pragma once
-#include "user_control.hpp"
-#include "live_object.hpp"
+#include "game_object/user_control/user_control.hpp"
+#include "game_object/live_object/live_object.hpp"
 #include "raylib.h"
 #include <memory>
 
@@ -11,7 +11,6 @@ public:
           const std::string &imagePath,
           int radius,
           float scale,
-          int hp,
           int maxHp,
           int speed);
 

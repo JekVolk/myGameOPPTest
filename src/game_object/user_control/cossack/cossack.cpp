@@ -1,15 +1,16 @@
 #include "cossack.hpp"
 #include <raymath.h>
 
+int Cossack::_level = 1;
+Camera2D Cossack::_camera = {};
 const float Cossack::_smoothSpeed = 5.0f;
 
 Cossack::Cossack(const Vector2 &position,
                  const std::string &imagePath,
                  int radius,
                  float scale,
-                 int hp,
                  int maxHp,
-                 int speed) : LiveObject(hp, maxHp),
+                 int speed) : LiveObject(maxHp),
                               UserControl(position, imagePath, radius, scale, speed)
 {
   _xp = 0;

@@ -1,8 +1,8 @@
 #include "award_dispatcher.hpp"
-#include "utils.hpp"
-#include "cossack_boots.hpp"
-#include "garlic.hpp"
-#include "xp_book.hpp"
+#include "utils/utils.hpp"
+#include "game_object/auto_control/award/cossack_boots/cossack_boots.hpp"
+#include "game_object/auto_control/award/garlic/garlic.hpp"
+#include "game_object/auto_control/award/xp_book/xp_book.hpp"
 #include <memory>
 
 const std::unordered_map<EnemyType, CreateAwardInfo> AwardDispatcher::_awardMatrix = {

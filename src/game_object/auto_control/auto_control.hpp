@@ -1,5 +1,5 @@
 #pragma once
-#include "game_sprite.hpp"
+#include "view/game_sprite/game_sprite.hpp"
 
 class AutoControl : public GameSprite
 {

@@ -1,6 +1,6 @@
 #pragma once
-#include "enemy.hpp"
-#include "award.hpp"
+#include "game_object/auto_control/enemy/enemy.hpp"
+#include "game_object/auto_control/award/award.hpp"
 #include <unordered_map>
 #include <vector>
 #include <memory>

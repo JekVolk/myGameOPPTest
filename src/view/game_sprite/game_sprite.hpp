@@ -7,7 +7,7 @@ class GameSprite
 {
 public:
   GameSprite(const Vector2 &position, const std::string &imagePath, int radius, float scale);
-  ~GameSprite();
+  virtual ~GameSprite();
   void draw();
   Vector2 getPosition() { return _position; };
 

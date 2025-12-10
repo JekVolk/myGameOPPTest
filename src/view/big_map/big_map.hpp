@@ -1,6 +1,6 @@
 #pragma once
-#include "overlay.hpp"
-#include "alert.hpp"
+#include "view/overlay/overlay.hpp"
+#include "view/alert/alert.hpp"
 
 class BigMap
 {

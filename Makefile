@@ -363,15 +363,30 @@ endif
 # Define a recursive wildcard function
 rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
 
-# Define all source files required
-SRC_DIR = src
-OBJ_DIR = obj
+# 2. Знаходимо всі .cpp файли у папці src (і в усіх її підпапках)
+SRC = src/main.cpp \
+      src/utils/utils.cpp \
+      src/dispatcher/award/award_dispatcher.cpp \
+      src/dispatcher/enemy/enemy_dispatcher.cpp \
+      src/dispatcher/game/game_dispatcher.cpp \
+      src/game/game.cpp \
+      src/game_object/auto_control/auto_control.cpp \
+      src/game_object/auto_control/award/award.cpp \
+      src/game_object/auto_control/enemy/enemy.cpp \
+      src/game_object/auto_control/enemy/damager_enemy/damager_enemy.cpp \
+      src/game_object/auto_control/enemy/damager_enemy/eternal_dusk_lord/eternal_dusk_lord.cpp \
+      src/game_object/auto_control/enemy/soulmender/soulmender.cpp \
+      src/game_object/live_object/live_object.cpp \
+      src/game_object/user_control/user_control.cpp \
+      src/game_object/user_control/cossack/cossack.cpp \
+      src/game_object/user_control/sight/sight.cpp \
+      src/view/alert/alert.cpp \
+      src/view/big_map/big_map.cpp \
+      src/view/game_sprite/game_sprite.cpp \
+      src/view/overlay/overlay.cpp \
 
-# Define all object files from source files
-SRC = $(call rwildcard, *.c, *.h)
-#OBJS = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-OBJS ?= main.c
-
+OBJS = $(SRC:.cpp=.o)
+CFLAGS += -Isrc
 # For Android platform we call a custom Makefile.Android
 ifeq ($(PLATFORM),PLATFORM_ANDROID)
     MAKEFILE_PARAMS = -f Makefile.Android 
@@ -393,9 +408,8 @@ $(PROJECT_NAME): $(OBJS)
 # Compile source files
 # NOTE: This pattern will compile every module defined on $(OBJS)
 #%.o: %.c
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+%.o: %.cpp
 	$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE_PATHS) -D$(PLATFORM)
-
 # Clean everything
 clean:
 ifeq ($(PLATFORM),PLATFORM_DESKTOP)

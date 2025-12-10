@@ -7,10 +7,6 @@ Game::Game(GameDispatcher gameDispatcher, BigMap bigMap) : _isRunning(true),
 void Game::run()
 {
   _isRunning = true;
-  InitWindow(800, 600, "Козак проти мороку");
-
-  SetTargetFPS(60);
-
   while (_isRunning && !WindowShouldClose())
   {
     {
@@ -18,7 +14,7 @@ void Game::run()
       _gameDispatcher.keyLoop();
       _gameDispatcher.update(alert);
     }
-    CloseWindow();
+    
   }
   _isRunning = false;
 }

@@ -1,6 +1,6 @@
-#include "big_map.hpp"
-#include "game_sprite.hpp"
-#include "cossack.hpp"
+#include "view/big_map/big_map.hpp"
+#include "view/game_sprite/game_sprite.hpp"
+#include "game_object/user_control/cossack/cossack.hpp"
 
 BigMap::BigMap(Overlay overlay, Alert alert)
     : _overlay(std::move(overlay)), _alert(std::move(alert))

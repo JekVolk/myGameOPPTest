@@ -3,7 +3,7 @@
 class LiveObject
 {
 public:
-  LiveObject(int hp, int maxHp) : _hp(hp), _maxHp(maxHp) {};
+  LiveObject(int maxHp) : _hp(maxHp), _maxHp(maxHp) {};
   bool takeDamage(int value);
   void treatment(int value);
 
