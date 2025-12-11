@@ -1,9 +1,9 @@
 #include "game_dispatcher.hpp"
 
-GameDispatcher::GameDispatcher() : _enemyDispatcher(),
-                                   _awardDispatcher(),
-                                   _cossack({0, 0}, "Graphics/cossack/cossack.png", 50, 0.1, 100, 50),
-                                   _sight({150, 150}, "Graphics/sight/sight.png", 100, 0.2, 100, 100) {}
+GameDispatcher::GameDispatcher(Alert *alert) : _enemyDispatcher(),
+                                               _awardDispatcher(),
+                                               _cossack({0, 0}, "Graphics/cossack/cossack.png", 100, 0.2, 100, 50),
+                                               _sight({150, 150}, "Graphics/sight/sight.png", 100, 0.2, 100, 100), _alert(alert) {}
 
 void GameDispatcher::keyLoop()
 {
@@ -55,18 +55,18 @@ void GameDispatcher::keyLoop()
   }
 }
 
-void GameDispatcher::update(Alert alert)
+void GameDispatcher::update()
 {
   _enemyDispatcher.createEnemys(Cossack::getLevel());
 
   if (_enemyDispatcher.actionEnemy(_cossack))
   {
-    alert.setMode(Defeat);
+    _alert->setMode(Defeat);
   }
   _awardDispatcher.checkAwards(_cossack);
 
   if (Cossack::getLevel() == 20)
   {
-    alert.setMode(Win);
+    _alert->setMode(Win);
   }
 }

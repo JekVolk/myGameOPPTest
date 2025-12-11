@@ -5,7 +5,7 @@
 
 BigMap::BigMap() : _overlay(), _alert() {}
 
-Alert BigMap::draw()
+void BigMap::draw()
 {
   ClearBackground(GREEN);
   BeginDrawing();

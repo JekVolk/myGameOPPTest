@@ -8,13 +8,14 @@
 class GameDispatcher
 {
 public:
-  GameDispatcher();
+  GameDispatcher(Alert *alert;);
   void keyLoop();
-  void update(Alert alert);
+  void update();
 
 private:
   EnemyDispatcher _enemyDispatcher;
   AwardDispatcher _awardDispatcher;
   Cossack _cossack;
   Sight _sight;
+  Alert *_alert;
 };

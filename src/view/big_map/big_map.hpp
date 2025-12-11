@@ -6,7 +6,8 @@ class BigMap
 {
 public:
   BigMap();
-  Alert draw();
+  void draw();
+  Alert *getAlert() { return &_alert; };
 
 private:
   Overlay _overlay;

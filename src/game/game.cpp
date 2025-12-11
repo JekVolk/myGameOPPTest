@@ -1,6 +1,6 @@
 #include "game.hpp"
 
-Game::Game() : _isRunning(true), _gameDispatcher(), _big_map() {}
+Game::Game() : _isRunning(true), _big_map(), _gameDispatcher(_big_map.getAlert()) {}
 
 void Game::run()
 {
@@ -8,9 +8,9 @@ void Game::run()
   while (_isRunning && !WindowShouldClose())
   {
     {
-      Alert alert = _big_map.draw();
+      _big_map.draw();
       _gameDispatcher.keyLoop();
-      _gameDispatcher.update(alert);
+      _gameDispatcher.update();
     }
   }
   _isRunning = false;
