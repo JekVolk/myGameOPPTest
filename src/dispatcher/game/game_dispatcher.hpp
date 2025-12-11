@@ -8,7 +8,7 @@
 class GameDispatcher
 {
 public:
-  GameDispatcher(Alert *alert;);
+  GameDispatcher(Alert *alert);
   void keyLoop();
   void update();
 

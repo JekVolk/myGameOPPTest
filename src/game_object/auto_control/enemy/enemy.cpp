@@ -1,4 +1,5 @@
 #include "enemy.hpp"
+#include "utils/utils.hpp"
 
 Enemy::Enemy(const Vector2 &position, const std::string &imagePath, int radius,
              float scale, int maxHp, int speed,

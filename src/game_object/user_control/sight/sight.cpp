@@ -1,4 +1,5 @@
 #include "sight.hpp"
+#include "utils/utils.hpp"
 
 Sight::Sight(const Vector2 &position, const std::string &imagePath, int radius, float scale, int damage, int speed) : UserControl(position, imagePath, radius, scale, speed), _damage(damage)
 {

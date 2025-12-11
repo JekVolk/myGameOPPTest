@@ -21,7 +21,6 @@ void BigMap::draw()
   _alert.draw();
 
   EndDrawing();
-  return _alert;
 }
 
 void BigMap::_drawSelf()
