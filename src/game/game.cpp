@@ -1,8 +1,6 @@
 #include "game.hpp"
 
-Game::Game(GameDispatcher gameDispatcher, BigMap bigMap) : _isRunning(true),
-                                                           _gameDispatcher(std::move(gameDispatcher)),
-                                                           _big_map(std::move(bigMap)) {}
+Game::Game() : _isRunning(true), _gameDispatcher(), _big_map() {}
 
 void Game::run()
 {
@@ -14,7 +12,6 @@ void Game::run()
       _gameDispatcher.keyLoop();
       _gameDispatcher.update(alert);
     }
-    
   }
   _isRunning = false;
 }

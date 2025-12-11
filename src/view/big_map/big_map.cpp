@@ -2,10 +2,7 @@
 #include "view/game_sprite/game_sprite.hpp"
 #include "game_object/user_control/cossack/cossack.hpp"
 
-BigMap::BigMap(Overlay overlay, Alert alert)
-    : _overlay(std::move(overlay)), _alert(std::move(alert))
-{
-}
+BigMap::BigMap() : _overlay(), _alert() {}
 
 Alert BigMap::draw()
 {
@@ -19,8 +16,8 @@ Alert BigMap::draw()
 
   EndMode2D();
 
-  _overlay.draw(Cossack::getLevel());
-  _alert.draw();
+  //_overlay.draw(Cossack::getLevel());
+  //_alert.draw();
 
   EndDrawing();
   return _alert;

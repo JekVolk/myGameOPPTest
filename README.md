@@ -1,4 +1,8 @@
-# Raylib-CPP-Starter-Template-for-VSCODE-V2
+```
+C:/raylib/w64devkit/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=Makefile OBJS=src/*.cpp clean  
+```
+#
+ Raylib-CPP-Starter-Template-for-VSCODE-V2
 Raylib C++ Starter Template for Visual Studio Code on Windows.
 This demo project contains a bouncing ball raylib example program.
 It works with raylib version 5.0. Tested on both Windows 10 and Windows 11.

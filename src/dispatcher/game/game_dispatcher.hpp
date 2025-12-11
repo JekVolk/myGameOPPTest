@@ -8,7 +8,7 @@
 class GameDispatcher
 {
 public:
-  GameDispatcher(EnemyDispatcher enemyDispatcher, AwardDispatcher awardDispatcher, Cossack cossack, Sight sight);
+  GameDispatcher();
   void keyLoop();
   void update(Alert alert);
 

@@ -1,7 +1,9 @@
 #include "game_dispatcher.hpp"
 
-GameDispatcher::GameDispatcher(EnemyDispatcher enemyDispatcher, AwardDispatcher awardDispatcher, Cossack cossack,
-                               Sight sight) : _enemyDispatcher(std::move(enemyDispatcher)), _awardDispatcher(std::move(awardDispatcher)), _cossack(std::move(cossack)), _sight(std::move(sight)) {}
+GameDispatcher::GameDispatcher() : _enemyDispatcher(),
+                                   _awardDispatcher(),
+                                   _cossack({0, 0}, "Graphics/cossack/cossack.png", 50, 0.1, 100, 50),
+                                   _sight({150, 150}, "Graphics/sight/sight.png", 100, 0.2, 100, 100) {}
 
 void GameDispatcher::keyLoop()
 {

@@ -5,7 +5,7 @@
 class BigMap
 {
 public:
-  BigMap(Overlay overlay, Alert alert);
+  BigMap();
   Alert draw();
 
 private:

@@ -17,7 +17,7 @@ Cossack::Cossack(const Vector2 &position,
 
   // Ініціалізація камери
   _camera.target = getPosition();
-  _camera.offset = {400, 300};
+  _camera.offset = {GetScreenWidth() / 2, GetScreenHeight() / 2};
   _camera.zoom = 1.0f;
 }
 

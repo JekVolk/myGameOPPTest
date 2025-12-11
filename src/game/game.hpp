@@ -5,7 +5,7 @@
 class Game
 {
 public:
-  Game(GameDispatcher gameDispatcher, BigMap bigMap);
+  Game();
   void run();
   void stop();
 

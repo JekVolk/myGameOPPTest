@@ -6,7 +6,7 @@
 #include "game_object/auto_control/enemy/damager_enemy/crimson_brute/crimson_brute.hpp"
 
 const std::unordered_map<int, CreateEnemyInfo> EnemyDispatcher::_levelWaveMatrix = {
-    {1, {3, 1, 1, 0, 1, 0}},
+    {1, {3, 0, 90, 0, 0, 10}},
     {2, {4, 1, 1, 1, 1, 0}},
     {3, {5, 2, 1, 1, 1, 0}}};
 
@@ -15,7 +15,7 @@ void EnemyDispatcher::createEnemys(int level)
   const CreateEnemyInfo &info = _levelWaveMatrix.at(level);
   const size_t totalEnemies = _damagers.size() + _soulmenders.size();
   // position imagePath radius scale maxHp speed xp damage);
-  if (totalEnemies >= static_cast<size_t>(info.countEnemy))
+  if (totalEnemies <= static_cast<size_t>(info.countEnemy))
   {
     if (Utils::chance(info.randomEternalDuskLord, 100))
     {
