@@ -5,16 +5,18 @@
 #include "game_object/auto_control/enemy/damager_enemy/night_stalker/night_stalker.hpp"
 #include "game_object/auto_control/enemy/damager_enemy/crimson_brute/crimson_brute.hpp"
 
+// countEnemy, Soulmender, BloodSpawn, EternalDuskLord , NightStalker, CrimsonBrute
 const std::unordered_map<int, CreateEnemyInfo> EnemyDispatcher::_levelWaveMatrix = {
-    {1, {3, 0, 90, 0, 0, 10}},
-    {2, {4, 1, 1, 1, 1, 0}},
-    {3, {5, 2, 1, 1, 1, 0}}};
+    {1, {30, 0, 90, 0, 10, 0}},
+    {2, {40, 0, 70, 0, 25, 5}},
+    {3, {50, 2, 60, 0, 30, 13}}};
 
 void EnemyDispatcher::createEnemys(int level)
 {
   const CreateEnemyInfo &info = _levelWaveMatrix.at(level);
   const size_t totalEnemies = _damagers.size() + _soulmenders.size();
   // position imagePath radius scale maxHp speed xp damage);
+  // info
   if (totalEnemies <= static_cast<size_t>(info.countEnemy))
   {
     if (Utils::chance(info.randomEternalDuskLord, 100))
