@@ -7,6 +7,7 @@ public:
   static int getMapWidth() { return _mapWidth; };
   static int getMapHeight() { return _mapHeight; };
   static int getRandomInt(int min, int max);
+  static bool IsPointInCircle(const Vector2 &center, const Vector2 &point, float radius);
   static Vector2 getRandomPosition();
   static bool chance(int chancePercent, int maxPercent);
 

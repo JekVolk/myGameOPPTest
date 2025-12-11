@@ -7,13 +7,15 @@ Enemy::Enemy(const Vector2 &position, const std::string &imagePath, int radius,
 
 bool Enemy::_isZoneCossack(Cossack &cossack)
 {
-  // TODO:
-  return false;
+  const Vector2 cosPos = cossack.getPosition();
+  return Utils::IsPointInCircle(getPosition(), cosPos, _getRadius());
 }
+
 void Enemy::_moveAll(Cossack &cossack)
 {
   // TODO:
 }
+
 void Enemy::_moveLine(Cossack &cossack)
 {
   // TODO:

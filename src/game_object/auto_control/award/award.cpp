@@ -1,4 +1,5 @@
 #include "award.hpp"
+#include "utils/utils.hpp"
 
 Award::Award(const Vector2 &position, const std::string &imagePath, int radius, float scale, int value)
     : AutoControl(position, imagePath, radius, scale), _value(value) {}
@@ -17,7 +18,6 @@ bool Award::activate(Cossack &cossack)
 
 bool Award::_isEntersZone(Cossack &cossack)
 {
-  // const int cosPos = cossack.getPosition();
-  //  TODO:
-  return false;
+  const Vector2 cosPos = cossack.getPosition();
+  return Utils::IsPointInCircle(getPosition(), cosPos, _getRadius());
 }

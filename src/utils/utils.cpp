@@ -22,3 +22,14 @@ bool Utils::chance(int chancePercent, int maxPercent = 100)
 
   return getRandomInt(1, maxPercent) <= chancePercent;
 }
+
+bool Utils::IsPointInCircle(const Vector2 &center, const Vector2 &point, float radius)
+{
+  float dx = center.x - point.x;
+  float dy = center.y - point.y;
+
+  float distanceSquared = dx * dx + dy * dy;
+  float radiusSquared = radius * radius;
+
+  return distanceSquared <= radiusSquared;
+}

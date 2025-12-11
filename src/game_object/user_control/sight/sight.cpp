@@ -35,6 +35,6 @@ std::vector<int> Sight::shot(std::vector<std::unique_ptr<DamagerEnemy>> &damager
 
 bool Sight::_isAttackZone(Enemy &enemy)
 {
-  // TODO: Shooting logic here
-  return false;
+  return Utils::IsPointInCircle(getPosition(), enemy.getPosition(), _getRadius());
+  ;
 }
